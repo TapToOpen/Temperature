@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://streamlit.io/playground?example=hello -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; inset-inline-start: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace:before {content: attr(data-display); position: absolute; pointer-events: none; color: #888;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ17 {color: #ffff59;}
+.ͼ18 {color: #a3a8b8;}
+.ͼ19 {color: #a3a8b8;}
+.ͼ1a {color: #a3a8b8; font-style: italic;}
+.ͼ1b {color: #a6dcff;}
+.ͼ1c {color: #7defa1;}
+.ͼ1d {color: #7defa1;}
+.ͼ1e {color: #7defa1;}
+.ͼ1f {color: #60b4ff;}
+.ͼ1g {color: #ffff59;}
+.ͼ16 {background-color: #262730; color: #ffffff;}
+.ͼ16 .cm-content {caret-color: #a3a8b8;}
+.ͼ16 .cm-cursor, .ͼ16 .cm-dropCursor {border-left-color: #a3a8b8;}
+.ͼ16.cm-focused .cm-selectionBackground, .ͼ16 .cm-line::selection, .ͼ16 .cm-selectionLayer .cm-selectionBackground, .ͼ16 .cm-content ::selection {background: #555867 !important;}
+.ͼ16 .cm-selectionMatch {background-color: #555867;}
+.ͼ5 {color: #404740;}
+.ͼ6 {text-decoration: underline;}
+.ͼ7 {text-decoration: underline; font-weight: bold;}
+.ͼ8 {font-style: italic;}
+.ͼ9 {font-weight: bold;}
+.ͼa {text-decoration: line-through;}
+.ͼb {color: #708;}
+.ͼc {color: #219;}
+.ͼd {color: #164;}
+.ͼe {color: #a11;}
+.ͼf {color: #e40;}
+.ͼg {color: #00f;}
+.ͼh {color: #30a;}
+.ͼi {color: #085;}
+.ͼj {color: #167;}
+.ͼk {color: #256;}
+.ͼl {color: #00c;}
+.ͼm {color: #940;}
+.ͼn {color: #f00;}
+.ͼbd .cm-scroller {height: 100% !important;}
+.ͼbc .cm-scroller {height: 100% !important;}
+.ͼbb .cm-scroller {height: 100% !important;}
+.ͼba .cm-scroller {height: 100% !important;}
+.ͼb9 .cm-scroller {height: 100% !important;}
+.ͼb8 .cm-scroller {height: 100% !important;}
+.ͼb7 .cm-scroller {height: 100% !important;}
+.ͼb6 .cm-scroller {height: 100% !important;}
+.ͼb5 .cm-scroller {height: 100% !important;}
+.ͼb4 .cm-scroller {height: 100% !important;}
+.ͼb3 .cm-scroller {height: 100% !important;}
+.ͼb2 .cm-scroller {height: 100% !important;}
+.ͼb1 .cm-scroller {height: 100% !important;}
+.ͼb0 .cm-scroller {height: 100% !important;}
+.ͼaz .cm-scroller {height: 100% !important;}
+.ͼay .cm-scroller {height: 100% !important;}
+.ͼax .cm-scroller {height: 100% !important;}
+.ͼaw .cm-scroller {height: 100% !important;}
+.ͼav .cm-scroller {height: 100% !important;}
+.ͼau .cm-scroller {height: 100% !important;}
+.ͼat .cm-scroller {height: 100% !important;}
+.ͼas .cm-scroller {height: 100% !important;}
+.ͼar .cm-scroller {height: 100% !important;}
+.ͼaq .cm-scroller {height: 100% !important;}
+.ͼap .cm-scroller {height: 100% !important;}
+.ͼao .cm-scroller {height: 100% !important;}
+.ͼan .cm-scroller {height: 100% !important;}
+.ͼam .cm-scroller {height: 100% !important;}
+.ͼal .cm-scroller {height: 100% !important;}
+.ͼak .cm-scroller {height: 100% !important;}
+.ͼaj .cm-scroller {height: 100% !important;}
+.ͼai .cm-scroller {height: 100% !important;}
+.ͼah .cm-scroller {height: 100% !important;}
+.ͼag .cm-scroller {height: 100% !important;}
+.ͼaf .cm-scroller {height: 100% !important;}
+.ͼae .cm-scroller {height: 100% !important;}
+.ͼad .cm-scroller {height: 100% !important;}
+.ͼac .cm-scroller {height: 100% !important;}
+.ͼab .cm-scroller {height: 100% !important;}
+.ͼaa .cm-scroller {height: 100% !important;}
+.ͼa9 .cm-scroller {height: 100% !important;}
+.ͼa8 .cm-scroller {height: 100% !important;}
+.ͼa7 .cm-scroller {height: 100% !important;}
+.ͼa6 .cm-scroller {height: 100% !important;}
+.ͼa5 .cm-scroller {height: 100% !important;}
+.ͼa4 .cm-scroller {height: 100% !important;}
+.ͼa3 .cm-scroller {height: 100% !important;}
+.ͼa2 .cm-scroller {height: 100% !important;}
+.ͼa1 .cm-scroller {height: 100% !important;}
+.ͼa0 .cm-scroller {height: 100% !important;}
+.ͼ9z .cm-scroller {height: 100% !important;}
+.ͼ9y .cm-scroller {height: 100% !important;}
+.ͼ9x .cm-scroller {height: 100% !important;}
+.ͼ9w .cm-scroller {height: 100% !important;}
+.ͼ9v .cm-scroller {height: 100% !important;}
+.ͼ9u .cm-scroller {height: 100% !important;}
+.ͼ9t .cm-scroller {height: 100% !important;}
+.ͼ9s .cm-scroller {height: 100% !important;}
+.ͼ9r .cm-scroller {height: 100% !important;}
+.ͼ9q .cm-scroller {height: 100% !important;}
+.ͼ9p .cm-scroller {height: 100% !important;}
+.ͼ9o .cm-scroller {height: 100% !important;}
+.ͼ9n .cm-scroller {height: 100% !important;}
+.ͼ9m .cm-scroller {height: 100% !important;}
+.ͼ9l .cm-scroller {height: 100% !important;}
+.ͼ9k .cm-scroller {height: 100% !important;}
+.ͼ9j .cm-scroller {height: 100% !important;}
+.ͼ9i .cm-scroller {height: 100% !important;}
+.ͼ9h .cm-scroller {height: 100% !important;}
+.ͼ9g .cm-scroller {height: 100% !important;}
+.ͼ9f .cm-scroller {height: 100% !important;}
+.ͼ9e .cm-scroller {height: 100% !important;}
+.ͼ9d .cm-scroller {height: 100% !important;}
+.ͼ9c .cm-scroller {height: 100% !important;}
+.ͼ9b .cm-scroller {height: 100% !important;}
+.ͼ9a .cm-scroller {height: 100% !important;}
+.ͼ99 .cm-scroller {height: 100% !important;}
+.ͼ98 .cm-scroller {height: 100% !important;}
+.ͼ97 .cm-scroller {height: 100% !important;}
+.ͼ96 .cm-scroller {height: 100% !important;}
+.ͼ95 .cm-scroller {height: 100% !important;}
+.ͼ94 .cm-scroller {height: 100% !important;}
+.ͼ93 .cm-scroller {height: 100% !important;}
+.ͼ92 .cm-scroller {height: 100% !important;}
+.ͼ91 .cm-scroller {height: 100% !important;}
+.ͼ90 .cm-scroller {height: 100% !important;}
+.ͼ8z .cm-scroller {height: 100% !important;}
+.ͼ8y .cm-scroller {height: 100% !important;}
+.ͼ8x .cm-scroller {height: 100% !important;}
+.ͼ8w .cm-scroller {height: 100% !important;}
+.ͼ8v .cm-scroller {height: 100% !important;}
+.ͼ8u .cm-scroller {height: 100% !important;}
+.ͼ8t .cm-scroller {height: 100% !important;}
+.ͼ8s .cm-scroller {height: 100% !important;}
+.ͼ8r .cm-scroller {height: 100% !important;}
+.ͼ8q .cm-scroller {height: 100% !important;}
+.ͼ8p .cm-scroller {height: 100% !important;}
+.ͼ8o .cm-scroller {height: 100% !important;}
+.ͼ8n .cm-scroller {height: 100% !important;}
+.ͼ8m .cm-scroller {height: 100% !important;}
+.ͼ8l .cm-scroller {height: 100% !important;}
+.ͼ8k .cm-scroller {height: 100% !important;}
+.ͼ8j .cm-scroller {height: 100% !important;}
+.ͼ8i .cm-scroller {height: 100% !important;}
+.ͼ8h .cm-scroller {height: 100% !important;}
+.ͼ8g .cm-scroller {height: 100% !important;}
+.ͼ8f .cm-scroller {height: 100% !important;}
+.ͼ8e .cm-scroller {height: 100% !important;}
+.ͼ8d .cm-scroller {height: 100% !important;}
+.ͼ8c .cm-scroller {height: 100% !important;}
+.ͼ8b .cm-scroller {height: 100% !important;}
+.ͼ8a .cm-scroller {height: 100% !important;}
+.ͼ89 .cm-scroller {height: 100% !important;}
+.ͼ88 .cm-scroller {height: 100% !important;}
+.ͼ87 .cm-scroller {height: 100% !important;}
+.ͼ86 .cm-scroller {height: 100% !important;}
+.ͼ85 .cm-scroller {height: 100% !important;}
+.ͼ84 .cm-scroller {height: 100% !important;}
+.ͼ83 .cm-scroller {height: 100% !important;}
+.ͼ82 .cm-scroller {height: 100% !important;}
+.ͼ81 .cm-scroller {height: 100% !important;}
+.ͼ80 .cm-scroller {height: 100% !important;}
+.ͼ7z .cm-scroller {height: 100% !important;}
+.ͼ7y .cm-scroller {height: 100% !important;}
+.ͼ7x .cm-scroller {height: 100% !important;}
+.ͼ7w .cm-scroller {height: 100% !important;}
+.ͼ7v .cm-scroller {height: 100% !important;}
+.ͼ7u .cm-scroller {height: 100% !important;}
+.ͼ7t .cm-scroller {height: 100% !important;}
+.ͼ7s .cm-scroller {height: 100% !important;}
+.ͼ7r .cm-scroller {height: 100% !important;}
+.ͼ7q .cm-scroller {height: 100% !important;}
+.ͼ7p .cm-scroller {height: 100% !important;}
+.ͼ7o .cm-scroller {height: 100% !important;}
+.ͼ7n .cm-scroller {height: 100% !important;}
+.ͼ7m .cm-scroller {height: 100% !important;}
+.ͼ7l .cm-scroller {height: 100% !important;}
+.ͼ7k .cm-scroller {height: 100% !important;}
+.ͼ7j .cm-scroller {height: 100% !important;}
+.ͼ7i .cm-scroller {height: 100% !important;}
+.ͼ7h .cm-scroller {height: 100% !important;}
+.ͼ7g .cm-scroller {height: 100% !important;}
+.ͼ7f .cm-scroller {height: 100% !important;}
+.ͼ7e .cm-scroller {height: 100% !important;}
+.ͼ7d .cm-scroller {height: 100% !important;}
+.ͼ7c .cm-scroller {height: 100% !important;}
+.ͼ7b .cm-scroller {height: 100% !important;}
+.ͼ7a .cm-scroller {height: 100% !important;}
+.ͼ79 .cm-scroller {height: 100% !important;}
+.ͼ78 .cm-scroller {height: 100% !important;}
+.ͼ77 .cm-scroller {height: 100% !important;}
+.ͼ76 .cm-scroller {height: 100% !important;}
+.ͼ75 .cm-scroller {height: 100% !important;}
+.ͼ74 .cm-scroller {height: 100% !important;}
+.ͼ73 .cm-scroller {height: 100% !important;}
+.ͼ72 .cm-scroller {height: 100% !important;}
+.ͼ71 .cm-scroller {height: 100% !important;}
+.ͼ70 .cm-scroller {height: 100% !important;}
+.ͼ6z .cm-scroller {height: 100% !important;}
+.ͼ6y .cm-scroller {height: 100% !important;}
+.ͼ6x .cm-scroller {height: 100% !important;}
+.ͼ6w .cm-scroller {height: 100% !important;}
+.ͼ6v .cm-scroller {height: 100% !important;}
+.ͼ6u .cm-scroller {height: 100% !important;}
+.ͼ6t .cm-scroller {height: 100% !important;}
+.ͼ6s .cm-scroller {height: 100% !important;}
+.ͼ6r .cm-scroller {height: 100% !important;}
+.ͼ6q .cm-scroller {height: 100% !important;}
+.ͼ6p .cm-scroller {height: 100% !important;}
+.ͼ6o .cm-scroller {height: 100% !important;}
+.ͼ6n .cm-scroller {height: 100% !important;}
+.ͼ6m .cm-scroller {height: 100% !important;}
+.ͼ6l .cm-scroller {height: 100% !important;}
+.ͼ6k .cm-scroller {height: 100% !important;}
+.ͼ6j .cm-scroller {height: 100% !important;}
+.ͼ6i .cm-scroller {height: 100% !important;}
+.ͼ6h .cm-scroller {height: 100% !important;}
+.ͼ6g .cm-scroller {height: 100% !important;}
+.ͼ6f .cm-scroller {height: 100% !important;}
+.ͼ6e .cm-scroller {height: 100% !important;}
+.ͼ6d .cm-scroller {height: 100% !important;}
+.ͼ6c .cm-scroller {height: 100% !important;}
+.ͼ6b .cm-scroller {height: 100% !important;}
+.ͼ6a .cm-scroller {height: 100% !important;}
+.ͼ69 .cm-scroller {height: 100% !important;}
+.ͼ68 .cm-scroller {height: 100% !important;}
+.ͼ67 .cm-scroller {height: 100% !important;}
+.ͼ66 .cm-scroller {height: 100% !important;}
+.ͼ65 .cm-scroller {height: 100% !important;}
+.ͼ64 .cm-scroller {height: 100% !important;}
+.ͼ63 .cm-scroller {height: 100% !important;}
+.ͼ62 .cm-scroller {height: 100% !important;}
+.ͼ61 .cm-scroller {height: 100% !important;}
+.ͼ60 .cm-scroller {height: 100% !important;}
+.ͼ5z .cm-scroller {height: 100% !important;}
+.ͼ5y .cm-scroller {height: 100% !important;}
+.ͼ5x .cm-scroller {height: 100% !important;}
+.ͼ5w .cm-scroller {height: 100% !important;}
+.ͼ5v .cm-scroller {height: 100% !important;}
+.ͼ5u .cm-scroller {height: 100% !important;}
+.ͼ5t .cm-scroller {height: 100% !important;}
+.ͼ5s .cm-scroller {height: 100% !important;}
+.ͼ5r .cm-scroller {height: 100% !important;}
+.ͼ5q .cm-scroller {height: 100% !important;}
+.ͼ5p .cm-scroller {height: 100% !important;}
+.ͼ5o .cm-scroller {height: 100% !important;}
+.ͼ5n .cm-scroller {height: 100% !important;}
+.ͼ5m .cm-scroller {height: 100% !important;}
+.ͼ5l .cm-scroller {height: 100% !important;}
+.ͼ5k .cm-scroller {height: 100% !important;}
+.ͼ5j .cm-scroller {height: 100% !important;}
+.ͼ5i .cm-scroller {height: 100% !important;}
+.ͼ5h .cm-scroller {height: 100% !important;}
+.ͼ5g .cm-scroller {height: 100% !important;}
+.ͼ5f .cm-scroller {height: 100% !important;}
+.ͼ5e .cm-scroller {height: 100% !important;}
+.ͼ5d .cm-scroller {height: 100% !important;}
+.ͼ5c .cm-scroller {height: 100% !important;}
+.ͼ5b .cm-scroller {height: 100% !important;}
+.ͼ5a .cm-scroller {height: 100% !important;}
+.ͼ59 .cm-scroller {height: 100% !important;}
+.ͼ58 .cm-scroller {height: 100% !important;}
+.ͼ57 .cm-scroller {height: 100% !important;}
+.ͼ56 .cm-scroller {height: 100% !important;}
+.ͼ55 .cm-scroller {height: 100% !important;}
+.ͼ54 .cm-scroller {height: 100% !important;}
+.ͼ53 .cm-scroller {height: 100% !important;}
+.ͼ52 .cm-scroller {height: 100% !important;}
+.ͼ51 .cm-scroller {height: 100% !important;}
+.ͼ50 .cm-scroller {height: 100% !important;}
+.ͼ4z .cm-scroller {height: 100% !important;}
+.ͼ4y .cm-scroller {height: 100% !important;}
+.ͼ4x .cm-scroller {height: 100% !important;}
+.ͼ4w .cm-scroller {height: 100% !important;}
+.ͼ4v .cm-scroller {height: 100% !important;}
+.ͼ4u .cm-scroller {height: 100% !important;}
+.ͼ4t .cm-scroller {height: 100% !important;}
+.ͼ4s .cm-scroller {height: 100% !important;}
+.ͼ4r .cm-scroller {height: 100% !important;}
+.ͼ4q .cm-scroller {height: 100% !important;}
+.ͼ4p .cm-scroller {height: 100% !important;}
+.ͼ4o .cm-scroller {height: 100% !important;}
+.ͼ4n .cm-scroller {height: 100% !important;}
+.ͼ4m .cm-scroller {height: 100% !important;}
+.ͼ4l .cm-scroller {height: 100% !important;}
+.ͼ4k .cm-scroller {height: 100% !important;}
+.ͼ4j .cm-scroller {height: 100% !important;}
+.ͼ4i .cm-scroller {height: 100% !important;}
+.ͼ4h .cm-scroller {height: 100% !important;}
+.ͼ4g .cm-scroller {height: 100% !important;}
+.ͼ4f .cm-scroller {height: 100% !important;}
+.ͼ4e .cm-scroller {height: 100% !important;}
+.ͼ4d .cm-scroller {height: 100% !important;}
+.ͼ4c .cm-scroller {height: 100% !important;}
+.ͼ4b .cm-scroller {height: 100% !important;}
+.ͼ4a .cm-scroller {height: 100% !important;}
+.ͼ49 .cm-scroller {height: 100% !important;}
+.ͼ48 .cm-scroller {height: 100% !important;}
+.ͼ47 .cm-scroller {height: 100% !important;}
+.ͼ46 .cm-scroller {height: 100% !important;}
+.ͼ45 .cm-scroller {height: 100% !important;}
+.ͼ44 .cm-scroller {height: 100% !important;}
+.ͼ43 .cm-scroller {height: 100% !important;}
+.ͼ42 .cm-scroller {height: 100% !important;}
+.ͼ41 .cm-scroller {height: 100% !important;}
+.ͼ40 .cm-scroller {height: 100% !important;}
+.ͼ3z .cm-scroller {height: 100% !important;}
+.ͼ3y .cm-scroller {height: 100% !important;}
+.ͼ3x .cm-scroller {height: 100% !important;}
+.ͼ3w .cm-scroller {height: 100% !important;}
+.ͼ3v .cm-scroller {height: 100% !important;}
+.ͼ3u .cm-scroller {height: 100% !important;}
+.ͼ3t .cm-scroller {height: 100% !important;}
+.ͼ3s .cm-scroller {height: 100% !important;}
+.ͼ3r .cm-scroller {height: 100% !important;}
+.ͼ3q .cm-scroller {height: 100% !important;}
+.ͼ3p .cm-scroller {height: 100% !important;}
+.ͼ3o .cm-scroller {height: 100% !important;}
+.ͼ3n .cm-scroller {height: 100% !important;}
+.ͼ3m .cm-scroller {height: 100% !important;}
+.ͼ3l .cm-scroller {height: 100% !important;}
+.ͼ3k .cm-scroller {height: 100% !important;}
+.ͼ3j .cm-scroller {height: 100% !important;}
+.ͼ3i .cm-scroller {height: 100% !important;}
+.ͼ3h .cm-scroller {height: 100% !important;}
+.ͼ3g .cm-scroller {height: 100% !important;}
+.ͼ3f .cm-scroller {height: 100% !important;}
+.ͼ3e .cm-scroller {height: 100% !important;}
+.ͼ3d .cm-scroller {height: 100% !important;}
+.ͼ3c .cm-scroller {height: 100% !important;}
+.ͼ3b .cm-scroller {height: 100% !important;}
+.ͼ3a .cm-scroller {height: 100% !important;}
+.ͼ39 .cm-scroller {height: 100% !important;}
+.ͼ38 .cm-scroller {height: 100% !important;}
+.ͼ37 .cm-scroller {height: 100% !important;}
+.ͼ36 .cm-scroller {height: 100% !important;}
+.ͼ35 .cm-scroller {height: 100% !important;}
+.ͼ34 .cm-scroller {height: 100% !important;}
+.ͼ33 .cm-scroller {height: 100% !important;}
+.ͼ32 .cm-scroller {height: 100% !important;}
+.ͼ31 .cm-scroller {height: 100% !important;}
+.ͼ30 .cm-scroller {height: 100% !important;}
+.ͼ2z .cm-scroller {height: 100% !important;}
+.ͼ2y .cm-scroller {height: 100% !important;}
+.ͼ2x .cm-scroller {height: 100% !important;}
+.ͼ2w .cm-scroller {height: 100% !important;}
+.ͼ2v .cm-scroller {height: 100% !important;}
+.ͼ2u .cm-scroller {height: 100% !important;}
+.ͼ2t .cm-scroller {height: 100% !important;}
+.ͼ2s .cm-scroller {height: 100% !important;}
+.ͼ2r .cm-scroller {height: 100% !important;}
+.ͼ2q .cm-scroller {height: 100% !important;}
+.ͼ2p .cm-scroller {height: 100% !important;}
+.ͼ2o .cm-scroller {height: 100% !important;}
+.ͼ2n .cm-scroller {height: 100% !important;}
+.ͼ2m .cm-scroller {height: 100% !important;}
+.ͼ2l .cm-scroller {height: 100% !important;}
+.ͼ2k .cm-scroller {height: 100% !important;}
+.ͼ2j .cm-scroller {height: 100% !important;}
+.ͼ2i .cm-scroller {height: 100% !important;}
+.ͼ2h .cm-scroller {height: 100% !important;}
+.ͼ2g .cm-scroller {height: 100% !important;}
+.ͼ2f .cm-scroller {height: 100% !important;}
+.ͼ2e .cm-scroller {height: 100% !important;}
+.ͼ2d .cm-scroller {height: 100% !important;}
+.ͼ2c .cm-scroller {height: 100% !important;}
+.ͼ2b .cm-scroller {height: 100% !important;}
+.ͼ2a .cm-scroller {height: 100% !important;}
+.ͼ29 .cm-scroller {height: 100% !important;}
+.ͼ28 .cm-scroller {height: 100% !important;}
+.ͼ27 .cm-scroller {height: 100% !important;}
+.ͼ26 .cm-scroller {height: 100% !important;}
+.ͼ25 .cm-scroller {height: 100% !important;}
+.ͼ24 .cm-scroller {height: 100% !important;}
+.ͼ23 .cm-scroller {height: 100% !important;}
+.ͼ22 .cm-scroller {height: 100% !important;}
+.ͼ21 .cm-scroller {height: 100% !important;}
+.ͼ20 .cm-scroller {height: 100% !important;}
+.ͼ1z .cm-scroller {height: 100% !important;}
+.ͼ1y .cm-scroller {height: 100% !important;}
+.ͼ1x .cm-scroller {height: 100% !important;}
+.ͼ1w .cm-scroller {height: 100% !important;}
+.ͼ1v .cm-scroller {height: 100% !important;}
+.ͼ1u .cm-scroller {height: 100% !important;}
+.ͼ1t .cm-scroller {height: 100% !important;}
+.ͼ1s .cm-scroller {height: 100% !important;}
+.ͼ1r .cm-scroller {height: 100% !important;}
+.ͼ1q .cm-scroller {height: 100% !important;}
+.ͼ1p .cm-scroller {height: 100% !important;}
+.ͼ1o .cm-scroller {height: 100% !important;}
+.ͼ1n .cm-scroller {height: 100% !important;}
+.ͼ1m .cm-scroller {height: 100% !important;}
+.ͼ1l .cm-scroller {height: 100% !important;}
+.ͼ1j .cm-scroller {height: 100% !important;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+.ͼ4 .cm-content {caret-color: transparent !important;}
+</style><link rel="icon" href="https://streamlit.io/favicon.svg"><link rel="alternate icon" href="https://streamlit.io/favicon32.ico"><meta name="msapplication-TileColor" content="#262730"><meta name="theme-color" content="#ffffff"><meta content="width=device-width, initial-scale=1" name="viewport"><script type="text/javascript" async="" src="./Temperature COnverter_files/analytics.js.download"></script><script src="./Temperature COnverter_files/1336281856462827" async=""></script><script type="text/javascript" async="" src="./Temperature COnverter_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./Temperature COnverter_files/insight.min.js.download"></script><script type="text/javascript" async="" src="./Temperature COnverter_files/heap-269788835.js.download"></script><script type="text/javascript" async="" src="./Temperature COnverter_files/gtm.js.download"></script><script src="./Temperature COnverter_files/netlify-identity-widget.js.download"></script><meta name="google-site-verification" content="zyVv-hITboynWJ93wjvSWGTamWRuzaZ92h_UBHjF004"><title>Playground • Streamlit</title><meta content="Playground • Streamlit" property="og:title"><meta content="Playground • Streamlit" name="twitter:title"><meta content="Streamlit is an open-source Python framework for data scientists and AI/ML engineers to deliver interactive data apps – in only a few lines of code." name="description"><meta content="Streamlit is an open-source Python framework for data scientists and AI/ML engineers to deliver interactive data apps – in only a few lines of code." property="og:description"><meta content="Streamlit is an open-source Python framework for data scientists and AI/ML engineers to deliver interactive data apps – in only a few lines of code." name="twitter:description"><meta property="og:type" content="website"><meta property="og:url" content="https://streamlit.io/playground"><meta content="summary_large_image" name="twitter:card"><meta property="og:image" content="https://streamlit.io/sharing-image-facebook.jpg"><meta name="twitter:image" content="https://streamlit.io/sharing-image-twitter.jpg"><meta name="msapplication-TileColor" content="#262730"><meta name="theme-color" content="#ffffff"><meta content="width=device-width, initial-scale=1" name="viewport"><link rel="icon" href="https://streamlit.io/favicon.svg"><link rel="alternate icon" href="https://streamlit.io/favicon32.ico"><meta name="next-head-count" content="19"><link data-next-font="" rel="preconnect" href="https://streamlit.io/" crossorigin="anonymous"><link rel="preload" href="./Temperature COnverter_files/7547eb016eb71c57.css" as="style" crossorigin=""><link rel="stylesheet" href="./Temperature COnverter_files/7547eb016eb71c57.css" crossorigin="" data-n-g=""><link rel="preload" href="./Temperature COnverter_files/9db14b7ab977d64b.css" as="style" crossorigin=""><link rel="stylesheet" href="./Temperature COnverter_files/9db14b7ab977d64b.css" crossorigin="" data-n-p=""><noscript data-n-css=""></noscript><script defer="" crossorigin="" nomodule="" src="./Temperature COnverter_files/polyfills-c67a75d1b6f99dc8.js.download"></script><script src="./Temperature COnverter_files/webpack-daa54e3d1ce785db.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/framework-b7fa4bf8e1ae99a1.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/main-940e9204cd26c6b7.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/_app-67b8eed299dc39d3.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/11e07bb4-5510a1b8e3f7d26a.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/4ad82c5e-8bc12c7ca8bdb96f.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/91664-49380a4279498ede.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/28781-65f5cb0be08085d5.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/13259-ce6d7f0fe3503ce7.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/playground-df7f7a63466543e8.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/_buildManifest.js.download" defer="" crossorigin=""></script><script src="./Temperature COnverter_files/_ssgManifest.js.download" defer="" crossorigin=""></script><link as="script" rel="prefetch" href="./Temperature COnverter_files/11391-113dd290cf4b9c94.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/index-9d0025a6694c86a4.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/[...id]-92e9f8a3a7a4b3a4.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/48143-ab512374542990b4.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/gallery-60354867c933eba6.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/components-fceb6ac7c0f49196.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/brand-3d46f2cf18c03bd2.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/advisories-e844ebfbdff16484.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/privacy-policy-57269508dadd44d7.js.download"><link as="script" rel="prefetch" href="./Temperature COnverter_files/terms-of-use-210342cb8da575db.js.download"></head><body><div class="branch-main commit-7c3a7714f5b4c3ba22701d9278e53514181f1b36"><div id="__next"><div class="AnnouncementBanner_Container__g_wC6 text-center section py-3 text-gray-80 bg-gray-30 bg-gradient-to-r from-gray-20 to-gray-30 px-6 sm:px-8"><div class="frontmatter-markdown"><p>🚀 <a href="https://docs.streamlit.io/develop/quick-reference/release-notes#version-1420-latest">Release 1.42 is here: authentication, dataframe updates, and more!</a> 🤩</p></div></div><div class="border-b border-gray-30/80 w-full md:my-4 py-6 md:py-2 sticky top-0 z-20 transition-colors bg-white"><header class="px-6 sm:px-8 container mx-auto flex items-center"><div class="flex flex-row flex-1 md:flex-none hover:opacity-90 mr-4"><a href="https://streamlit.io/"><svg width="301" height="165" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Streamlit Logo. Click to go back to the home page." viewBox="0 0 301 165" class="max-h-5 w-auto relative" style="top:-1px"><path d="m150.731 101.547-52.592-27.8-91.292-48.25c-.084-.083-.25-.083-.334-.083-3.333-1.584-6.75 1.75-5.5 5.083L47.53 149.139l.008.025c.05.117.092.233.142.35 1.909 4.425 6.075 7.158 10.609 8.233.383.084.657.159 1.117.251.459.102 1.1.241 1.65.283.09.008.174.008.266.016h.067c.066.009.133.009.2.017h.091c.059.008.125.008.184.008h.108c.067.009.133.009.2.009a817.728 817.728 0 0 0 177.259 0c.708 0 1.4-.034 2.066-.1l.634-.075c.025-.009.058-.009.083-.017.142-.017.283-.042.425-.067.208-.025.417-.066.625-.108.417-.092.606-.158 1.172-.353.565-.194 1.504-.534 2.091-.817.588-.283.995-.555 1.487-.863a26.566 26.566 0 0 0 1.774-1.216c.253-.194.426-.318.609-.493l-.1-.058-99.566-52.617Z" fill="#FF4B4B"></path><path d="M294.766 25.498h-.083l-91.326 48.25 50.767 75.609 46.4-118.859v-.167c1.167-3.5-2.416-6.666-5.758-4.833" fill="#7D353B"></path><path d="M155.598 2.556c-2.334-3.409-7.417-3.409-9.667 0L98.139 73.748l52.592 27.8 99.667 52.674c.626-.613 1.128-1.21 1.658-1.841a20.98 20.98 0 0 0 2.067-3.025l-50.767-75.608-47.758-71.192Z" fill="#BD4043"></path></svg></a></div><nav class="fixed inset-0 md:static flex-1 z-10 md:z-0 hidden md:block overflow-y-auto"><div class="absolute right-6 top-6 md:hidden flex justify-end"><button class="w-6 h-6"><svg width="24" height="21" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.9071 15.9993L31.3993 3.50844C32.2021 2.70564 32.2021 1.40491 31.3993 0.602104C30.5965 -0.200701 29.2958 -0.200701 28.493 0.602104L16.0007 13.0929L3.50844 0.602104C2.70564 -0.200701 1.40491 -0.200701 0.602104 0.602104C-0.200701 1.40491 -0.200701 2.70564 0.602104 3.50844L13.0944 15.9993L0.602104 28.4916C-0.200701 29.2944 -0.200701 30.5951 0.602104 31.3979C1.40491 32.2007 2.70564 32.2007 3.50844 31.3979L16.0007 18.9056L28.493 31.3979C28.8947 31.7997 29.4205 31.9998 29.9462 31.9998C30.4719 31.9998 30.9976 31.7989 31.3993 31.3979C32.2021 30.5951 32.2021 29.2944 31.3993 28.4916L18.9071 15.9993Z" fill="#262730"></path></svg></button></div><ul class="flex md:items-center flex-col md:flex-row bg-white md:bg-transparent px-6 md:px-0 pt-24 pb-8 md:py-0 shadow-lg md:shadow-none text-xl md:text-base"><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 "><a class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre" href="https://streamlit.io/cloud">Cloud</a></li><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 "><a class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre" href="https://streamlit.io/gallery">Gallery</a></li><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 "><a class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre" href="https://streamlit.io/components">Components</a></li><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 "><a class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre" href="https://streamlit.io/generative-ai">Generative AI</a></li><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 group has-dropdown relative md:static md:mx-4 pb-6 md:pt-0 md:pb-0"><a class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre" href="https://streamlit.io/community">Community</a><button class="dropdown-opener block md:hidden w-[16px] h-[16px] absolute top-4 right-0 -translate-y-1/2 cursor-pointer group-[.drop-opened]:before:hidden before:absolute before:top-1/2 before:left-1/2 before:-translate-y-1/2 before:-translate-x-1/2 before:w-[2px] before:h-full before:bg-gray-90 before:rounded after:absolute after:top-1/2 after:left-1/2 after:-translate-y-1/2 after:-translate-x-1/2 after:w-full after:h-[2px] after:bg-gray-90 after:rounded"></button><div class="dropdown hidden group-[.drop-opened]:block mt-6 md:mt-0 md:p-6 px-6 py-8 bg-gray-10 border-t md:px-0 md:drop-shadow-[0_4px_2px_rgba(38,39,48,0.05)] md:absolute md:top-full md:left-0 md:right-0 md:hidden md:group-hover:block md:group-focus:block before:md:absolute before:md:-top-5 before:md:left-0 before:md:right-0 before:md:bg-transparent before:md:h-5 md:bg-white z-10 transition-colors md:py-8 border-t-gray-30/80"><div class="md:px-6 md:px-8 md:py-13 mx-auto container"><div class="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-start gap-4"><div class="grid gap-3"><a class="text-gray-70 hover:text-gray-60 uppercase text-sm self-start" href="https://streamlit.io/community">Community Programs</a><ul class="text-md flex flex-col gap-2"><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://streamlit.io/become-a-creator">Become a Streamlit Creator</a></li><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://streamlit.io/community/advocates">Become a Streamlit Advocate</a></li><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://discuss.streamlit.io/t/seeking-new-additions-to-our-community-moderators-program/47458">Become a Streamlit Moderator</a></li></ul></div><div class="md:col-span-2"><p class="text-gray-70 uppercase text-sm mb-2">Connect with us</p><ul class="flex flex-col flex-wrap gap-2 max-h-40 text-base md:text-md leading-6"><li><a class="font-bold text-base md:text-md text-gray-80 hover:text-gray-70" href="https://discuss.streamlit.io/">Forum 💬</a></li><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://github.com/streamlit/streamlit">GitHub</a></li><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://info.snowflake.com/streamlit-newsletter-sign-up.html">Newsletter</a></li><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://www.youtube.com/channel/UC3LD42rjj-Owtxsa6PwGU5Q">YouTube</a></li><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://x.com/streamlit">X/Twitter</a></li><li><a class="text-base md:text-md text-gray-80 hover:text-gray-70" href="https://www.linkedin.com/company/streamlit">LinkedIn</a></li></ul></div></div></div></div></li><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 "><a href="https://docs.streamlit.io/" target="_blank" rel="noopener" class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre">Docs</a></li><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 "><a href="https://blog.streamlit.io/" target="_blank" rel="noopener" class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre">Blog</a></li><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 md:hidden"><a href="https://share.streamlit.io/?utm_source=streamlit&amp;utm_medium=referral&amp;utm_campaign=main&amp;utm_content=-ss-streamlit-io-topright" target="_blank" rel="noopener" class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre">Sign in</a></li><li class="md:hidden"><a href="https://share.streamlit.io/signup?utm_source=streamlit&amp;utm_medium=referral&amp;utm_campaign=main&amp;utm_content=-ss-streamlit-io-topright" target="_blank" rel="noopener" class="py-2 px-4 text-gray-90 text-center block rounded border-gray-80 border hover:bg-gray-90 hover:text-white hover:border-gray-90 active:bg-gray-90 active:text-white track--primary-header-cta">Sign up</a></li></ul></nav><nav class="justify-end"><ul class="hidden md:flex md:items-center"><li class="mx-2 lg:mx-4 pb-6 md:pt-0 md:pb-0 "><a href="https://share.streamlit.io/?utm_source=streamlit&amp;utm_medium=referral&amp;utm_campaign=main&amp;utm_content=-ss-streamlit-io-topright" target="_blank" rel="noopener" class="text-gray-90 font-medium hover:text-gray-80 whitespace-pre">Sign in</a></li><li><a href="https://share.streamlit.io/signup?utm_source=streamlit&amp;utm_medium=referral&amp;utm_campaign=main&amp;utm_content=-ss-streamlit-io-topright" target="_blank" rel="noopener" class="py-2 px-4 text-gray-90 text-center block rounded border-gray-80 border hover:bg-gray-90 hover:text-white hover:border-gray-90 active:bg-gray-90 active:text-white track--primary-header-cta">Sign up</a></li></ul></nav><div class="md:hidden flex justify-end"><button class="w-6 h-6" aria-label="Open menu"><svg class="w-full" viewBox="0 0 37 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.7456 17.7988H1.79882C0.804734 17.7988 0 16.9941 0 16C0 15.0059 0.804734 14.2012 1.79882 14.2012H34.7929C35.787 14.2012 36.5917 15.0059 36.5917 16C36.5917 16.9941 35.787 17.7988 34.7456 17.7988Z" fill="#262730"></path><path d="M34.7456 3.59763H1.79882C0.804734 3.59763 0 2.7929 0 1.79882C0 0.804733 0.804734 0 1.79882 0H34.7929C35.787 0 36.5917 0.804733 36.5917 1.79882C36.5917 2.7929 35.787 3.59763 34.7456 3.59763Z" fill="#262730"></path><path d="M34.7456 32H1.79882C0.804734 32 0 31.1952 0 30.2012C0 29.2071 0.804734 28.4023 1.79882 28.4023H34.7929C35.787 28.4023 36.5917 29.2071 36.5917 30.2012C36.5917 31.1952 35.787 32 34.7456 32Z" fill="#262730"></path></svg></button></div></header></div><main class="overflow-hidden"><section class="sm:grid sm:grid-cols-12 gap-x-8 px-6 sm:px-8 pt-8 sm:pt-16 lg:pt-32 pb-4 sm:pb-12 lg:pb-16 container mx-auto md:text-center grid gap-y-6 sm:gap-y-12"><h1 class="sm:col-start-1 sm:col-end-13 xl:col-start-3 xl:col-end-11 text-5xl sm:text-7xl md:text-8xl md:leading-none font-bold text-gray-90">Playground</h1><div class="text-xl sm:text-2xl text-gray-70 playground_playgroundContainer__3KMI5 xl:col-start-3 xl:col-end-11 sm:col-start-1 sm:col-end-13 lg:col-start-2 lg:col-end-12"><div class="frontmatter-markdown"><p>Try out a limited version of Streamlit right in your browser.</p><p>Just edit the code below and the app on the right updates automatically.</p><p>For the real thing, <a href="https://docs.streamlit.io/get-started/installation">install our Python library</a>.</p></div></div></section><section class="sm:grid sm:grid-cols-12 gap-x-8 px-6 sm:px-8 pb-4 sm:pb-12 lg:pb-16 container mx-auto"><div class="col-span-12"><div class="flex flex-wrap flex-col md:flex-row"><div class="text-gray-70 text-sm uppercase py-2 mr-8 md:-mb-1">Examples</div><div class="flex flex-wrap gap-y-2 gap-x-3"><button class="text-gray-70 hover:text-gray-90 py-2 px-3 -ml-3 md:ml-0">Blank</button><button class="bg-red-10 text-red-60 font-semibold rounded-full py-2 px-3 -ml-3 md:ml-0">Hello</button><button class="text-gray-70 hover:text-gray-90 py-2 px-3 -ml-3 md:ml-0">Charts</button><button class="text-gray-70 hover:text-gray-90 py-2 px-3 -ml-3 md:ml-0">Dataframes</button><button class="text-gray-70 hover:text-gray-90 py-2 px-3 -ml-3 md:ml-0">LLM chat</button><button class="text-gray-70 hover:text-gray-90 py-2 px-3 -ml-3 md:ml-0">Computer vision</button><button class="text-gray-70 hover:text-gray-90 py-2 px-3 -ml-3 md:ml-0">Geospatial</button></div></div></div><div class="col-span-6 rounded-xl overflow-hidden mt-8 relative"><div class="cm-theme"><div class="cm-editor ͼ1 ͼ2 ͼ4 ͼbd ͼ16"><div class="cm-announced" aria-live="polite"><div>Selection deleted</div></div><div tabindex="-1" class="cm-scroller"><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" style="tab-size: 4;" class="cm-content" role="textbox" aria-multiline="true" data-language="python"><div class="cm-line"><span class="ͼ1f">import</span> streamlit <span class="ͼ1f">as</span> st</div><div class="cm-line"><span class="ͼ1f">from</span> datetime <span class="ͼ1f">import</span> datetime</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼ1a"># Set page configuration</span></div><div class="cm-line">st<span class="ͼ18">.</span>set_page_config<span class="ͼ19">(</span>page_title<span class="ͼ1g">=</span><span class="ͼ1b">"Converter App"</span><span class="ͼ19">,</span> page_icon<span class="ͼ1g">=</span><span class="ͼ1b">"🌡️"</span><span class="ͼ19">,</span> layout<span class="ͼ1g">=</span><span class="ͼ1b">"wide"</span><span class="ͼ19">)</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼ1a"># HTML and CSS for Interface in Streamlit</span></div><div class="cm-line">st<span class="ͼ18">.</span>markdown<span class="ͼ19">(</span></div><div class="cm-line">    <span class="ͼ1b">"""</span></div><div class="cm-line"><span class="ͼ1b">    &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/&gt;</span></div><div class="cm-line"><span class="ͼ1b">    &lt;style&gt;</span></div><div class="cm-line"><span class="ͼ1b">    body { background-color: #f3f4f6; }</span></div><div class="cm-line"><span class="ͼ1b">    .top-bar { background-color: #1f2937; color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }</span></div><div class="cm-line"><span class="ͼ1b">    &lt;/style&gt;</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼ1b">    &lt;div class='top-bar'&gt;</span></div><div class="cm-line"><span class="ͼ1b">        &lt;h1&gt;🌡️ Temperature Converter App&lt;/h1&gt;</span></div><div class="cm-line"><span class="ͼ1b">    &lt;/div&gt;</span></div><div class="cm-line"><span class="ͼ1b">    """</span><span class="ͼ19">,</span></div><div class="cm-line">    unsafe_allow_html<span class="ͼ1g">=</span><span class="ͼ1d">True</span></div><div class="cm-line"><span class="ͼ19">)</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼ1a"># Temperature Converter UI</span></div><div class="cm-line">st<span class="ͼ18">.</span>title<span class="ͼ19">(</span><span class="ͼ1b">"Convert Temperature"</span><span class="ͼ19">)</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼ1a"># Input temperature and units</span></div><div class="cm-line">temperature <span class="ͼ1g">=</span> st<span class="ͼ18">.</span>number_input<span class="ͼ19">(</span><span class="ͼ1b">"Enter temperature:"</span><span class="ͼ19">)</span></div><div class="cm-line">unit <span class="ͼ1g">=</span> st<span class="ͼ18">.</span>selectbox<span class="ͼ19">(</span><span class="ͼ1b">"Select the unit:"</span><span class="ͼ19">,</span> <span class="ͼ19">[</span><span class="ͼ1b">"Celsius"</span><span class="ͼ19">,</span> <span class="ͼ1b">"Fahrenheit"</span><span class="ͼ19">]</span><span class="ͼ19">)</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼ1a"># Conversion logic</span></div><div class="cm-line"><span class="ͼ1f">if</span> st<span class="ͼ18">.</span>button<span class="ͼ19">(</span><span class="ͼ1b">"Convert"</span><span class="ͼ19">)</span>:</div><div class="cm-line">    <span class="ͼ1f">if</span> unit <span class="ͼ1g">==</span> <span class="ͼ1b">"Celsius"</span>:</div><div class="cm-line">        converted <span class="ͼ1g">=</span> <span class="ͼ19">(</span>temperature <span class="ͼ1g">*</span> <span class="ͼ1c">9</span><span class="ͼ1g">/</span><span class="ͼ1c">5</span><span class="ͼ19">)</span> <span class="ͼ1g">+</span> <span class="ͼ1c">32</span></div><div class="cm-line">        st<span class="ͼ18">.</span>success<span class="ͼ19">(</span><span class="ͼ1b">f"</span><span class="ͼ19">{</span>temperature<span class="ͼ19">}</span><span class="ͼ1b">°C is equal to </span><span class="ͼ19">{</span>converted:<span class="ͼ1f">.2f</span><span class="ͼ19">}</span><span class="ͼ1b">°F."</span><span class="ͼ19">)</span></div><div class="cm-line">    <span class="ͼ1f">else</span>:</div><div class="cm-line">        converted <span class="ͼ1g">=</span> <span class="ͼ19">(</span>temperature <span class="ͼ1g">-</span> <span class="ͼ1c">32</span><span class="ͼ19">)</span> <span class="ͼ1g">*</span> <span class="ͼ1c">5</span><span class="ͼ1g">/</span><span class="ͼ1c">9</span></div><div class="cm-line">        st<span class="ͼ18">.</span>success<span class="ͼ19">(</span><span class="ͼ1b">f"</span><span class="ͼ19">{</span>temperature<span class="ͼ19">}</span><span class="ͼ1b">°F is equal to </span><span class="ͼ19">{</span>converted:<span class="ͼ1f">.2f</span><span class="ͼ19">}</span><span class="ͼ1b">°C."</span><span class="ͼ19">)</span></div><div class="cm-line"><br></div></div><div class="cm-layer cm-layer-above cm-cursorLayer" aria-hidden="true" style="z-index: 150; animation-duration: 1200ms; animation-name: cm-blink;"><div class="cm-cursor cm-cursor-primary" style="left: 5.99429px; top: 730.185px; height: 17.2728px;"></div></div><div class="cm-layer cm-selectionLayer" aria-hidden="true" style="z-index: -2;"></div></div></div></div><button class="rounded absolute top-0 right-0 mx-8 my-6 bg-gray-80 text-gray-20 hover:bg-gray-70 px-4 py-2">Share</button></div><div class="col-span-6 rounded-xl overflow-hidden border border-gray-50 mt-8"><div class="stlite-wrapper"><iframe id="stlite-frame" style="width:100%;height:100%" src="./Temperature COnverter_files/saved_resource.html"></iframe></div></div></section></main><footer class="py-6 md:py-12 xl:py-16 mt-8"><div class="container mx-auto px-6 sm:px-8"><nav class="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4"><a class="absolute right-0" href="https://streamlit.io/"><svg width="301" height="165" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Streamlit Logo. Click to go back to the home page." viewBox="0 0 301 165" class="max-h-5 w-auto opacity-80"><path d="m150.971 101.551-52.592-27.8L7.087 25.5c-.083-.084-.25-.084-.333-.084-3.333-1.583-6.75 1.75-5.5 5.083L47.77 149.142l.008.025c.05.117.092.234.142.35 1.908 4.425 6.075 7.159 10.608 8.234.383.083.658.159 1.118.251.458.101 1.099.24 1.649.282.091.008.175.008.266.017h.067c.067.008.133.008.2.016h.092c.058.009.125.009.183.009h.108c.067.008.134.008.2.008a817.725 817.725 0 0 0 177.259 0c.708 0 1.4-.033 2.067-.1l.633-.075c.025-.008.058-.008.083-.017.142-.016.284-.041.425-.066.209-.025.417-.067.625-.109.417-.091.607-.158 1.172-.352.565-.194 1.504-.534 2.092-.818.587-.283.995-.555 1.486-.863a26.294 26.294 0 0 0 1.774-1.215c.253-.194.426-.318.61-.493l-.1-.059-99.567-52.616Z" fill="#808495"></path><path d="M295.007 25.502h-.084l-91.325 48.25 50.767 75.609 46.4-118.859v-.167c1.167-3.5-2.417-6.666-5.758-4.833" fill="#262730"></path><path d="M155.838 2.56c-2.333-3.409-7.417-3.409-9.667 0L98.379 73.752l52.592 27.8 99.667 52.674c.626-.613 1.128-1.21 1.659-1.841.75-.925 1.45-1.916 2.066-3.025l-50.766-75.608L155.838 2.56Z" fill="#555867"></path></svg></a><ul class="flex flex-col mb-2"><li><h6 class="text-gray-70 uppercase text-sm mb-4">Site</h6></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/">Home</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/gallery">App gallery</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/components">Component gallery</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/creators">Creators</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/generative-ai">Generative AI</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/cloud">Community Cloud</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/playground">Playground</a></li></ul><ul class="flex flex-col mb-2"><li><h6 class="text-gray-70 uppercase text-sm mb-4">Documentation</h6></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://docs.streamlit.io/library/get-started">Get started</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://docs.streamlit.io/knowledge-base/tutorials">Tutorials</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://docs.streamlit.io/library/api-reference">API reference</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://docs.streamlit.io/library/cheatsheet">Cheat sheet</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://docs.streamlit.io/library/changelog">Changelog</a></li></ul><ul class="flex flex-col mb-2"><li><h6 class="text-gray-70 uppercase text-sm mb-4">Resources</h6></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://discuss.streamlit.io/">Forum</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://blog.streamlit.io/">Blog</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" href="https://streamlit.io/brand">Brand</a></li></ul><ul class="flex flex-col mb-2"><li><h6 class="text-gray-70 uppercase text-sm mb-4">Social</h6></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://github.com/streamlit/streamlit">GitHub</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UC3LD42rjj-Owtxsa6PwGU5Q">YouTube</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/streamlit">LinkedIn</a></li><li class="mb-4 sm:mr-4 text-left"><a class="text-gray-80 hover:text-gray-70" target="_blank" rel="noopener noreferrer" href="https://twitter.com/streamlit">Twitter/X</a></li></ul></nav><div class="flex flex-col sm:flex-row items-baseline mt-4"><p class="flex-1 text-gray-70">© 2024 Snowflake Inc.</p><nav class="mt-4 sm:mt-0"><ul class="flex flex-row flex-wrap sm:flex-nowrap"><li class="mr-2 md:mr-4 lg:mr-8"><a class="text-gray-70 hover:text-gray-60" href="https://streamlit.io/advisories">Security advisories</a></li><li class="mr-2 md:mr-4 lg:mr-8"><button class="text-gray-70 hover:text-gray-60">Cookie policy</button></li><li class="mr-2 md:mr-4 lg:mr-8"><a class="text-gray-70 hover:text-gray-60" href="https://streamlit.io/privacy-policy">Privacy notice</a></li><li class="mr-2 md:mr-4 lg:mr-8"><a class="text-gray-70 hover:text-gray-60" href="https://streamlit.io/terms-of-use">Terms of use</a></li><li class="mr-2 md:mr-4 lg:mr-8"><a class="text-gray-70 hover:text-gray-60" href="mailto:streamlitcommunity@snowflake.com?subject=Contact%20from%20website%20">Contact</a></li></ul></nav></div></div></footer></div></div><script id="__NEXT_DATA__" type="application/json" crossorigin="">{"props":{"pageProps":{"buttonLabels":["Blank","Hello","Charts","Dataframes","LLM chat","Computer vision","Geospatial"],"editorContents":["import streamlit as st\n\n","import streamlit as st\n\nst.title(\"Hello Streamlit-er 👋\")\nst.markdown(\n    \"\"\" \n    This is a playground for you to try Streamlit and have fun. \n\n    **There's :rainbow[so much] you can build!**\n    \n    We prepared a few examples for you to get started. Just \n    click on the buttons above and discover what you can do \n    with Streamlit. \n    \"\"\"\n)\n\nif st.button(\"Send balloons!\"):\n    st.balloons()\n","import streamlit as st\nimport pandas as pd\nimport numpy as np\n\nst.write(\"Streamlit supports a wide range of data visualizations, including [Plotly, Altair, and Bokeh charts](https://docs.streamlit.io/develop/api-reference/charts). 📊 And with over 20 input widgets, you can easily make your data interactive!\")\n\nall_users = [\"Alice\", \"Bob\", \"Charly\"]\nwith st.container(border=True):\n    users = st.multiselect(\"Users\", all_users, default=all_users)\n    rolling_average = st.toggle(\"Rolling average\")\n\nnp.random.seed(42)\ndata = pd.DataFrame(np.random.randn(20, len(users)), columns=users)\nif rolling_average:\n    data = data.rolling(7).mean().dropna()\n\ntab1, tab2 = st.tabs([\"Chart\", \"Dataframe\"])\ntab1.line_chart(data, height=250)\ntab2.dataframe(data, height=250, use_container_width=True)\n","import streamlit as st\nimport pandas as pd\nimport numpy as np\n\nst.write(\"Got lots of data? Great! Streamlit can show [dataframes](https://docs.streamlit.io/develop/api-reference/data) with hundred thousands of rows, images, sparklines – and even supports editing! ✍️\")\n\nnum_rows = st.slider(\"Number of rows\", 1, 10000, 500)\nnp.random.seed(42)\ndata = []\nfor i in range(num_rows):\n    data.append(\n        {\n            \"Preview\": f\"https://picsum.photos/400/200?lock={i}\",\n            \"Views\": np.random.randint(0, 1000),\n            \"Active\": np.random.choice([True, False]),\n            \"Category\": np.random.choice([\"🤖 LLM\", \"📊 Data\", \"⚙️ Tool\"]),\n            \"Progress\": np.random.randint(1, 100),\n        }\n    )\ndata = pd.DataFrame(data)\n\nconfig = {\n    \"Preview\": st.column_config.ImageColumn(),\n    \"Progress\": st.column_config.ProgressColumn(),\n}\n\nif st.toggle(\"Enable editing\"):\n    edited_data = st.data_editor(data, column_config=config, use_container_width=True)\nelse:\n    st.dataframe(data, column_config=config, use_container_width=True)\n","import streamlit as st\nimport random\nimport time\n\nst.write(\"Streamlit loves LLMs! 🤖 [Build your own chat app](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps) in minutes, then make it powerful by adding images, dataframes, or even input widgets to the chat.\")\n\nst.caption(\"Note that this demo app isn't actually connected to any LLMs. Those are expensive ;)\")\n\n# Initialize chat history\nif \"messages\" not in st.session_state:\n    st.session_state.messages = [{\"role\": \"assistant\", \"content\": \"Let's start chatting! 👇\"}]\n\n# Display chat messages from history on app rerun\nfor message in st.session_state.messages:\n    with st.chat_message(message[\"role\"]):\n        st.markdown(message[\"content\"])\n\n# Accept user input\nif prompt := st.chat_input(\"What is up?\"):\n    # Add user message to chat history\n    st.session_state.messages.append({\"role\": \"user\", \"content\": prompt})\n    # Display user message in chat message container\n    with st.chat_message(\"user\"):\n        st.markdown(prompt)\n\n    # Display assistant response in chat message container\n    with st.chat_message(\"assistant\"):\n        message_placeholder = st.empty()\n        full_response = \"\"\n        assistant_response = random.choice(\n            [\n                \"Hello there! How can I assist you today?\",\n                \"Hi, human! Is there anything I can help you with?\",\n                \"Do you need help?\",\n            ]\n        )\n        # Simulate stream of response with milliseconds delay\n        for chunk in assistant_response.split():\n            full_response += chunk + \" \"\n            time.sleep(0.05)\n            # Add a blinking cursor to simulate typing\n            message_placeholder.markdown(full_response + \"▌\")\n        message_placeholder.markdown(full_response)\n    # Add assistant response to chat history\n    st.session_state.messages.append({\"role\": \"assistant\", \"content\": full_response})\n","import streamlit as st\nimport cv2\nimport numpy as np\nfrom PIL import Image\nimport requests\n\nst.write(\"Streamlit is also great for more traditional ML use cases like computer vision or NLP. Here's an example of edge detection using OpenCV. 👁️\") \n\nuploaded_file = st.file_uploader(\"Upload an image\", type=[\"jpg\", \"jpeg\", \"png\"])\nif uploaded_file:\n    image = Image.open(uploaded_file)\nelse:\n    image = Image.open(requests.get(\"https://picsum.photos/200/120\", stream=True).raw)\n\nedges = cv2.Canny(np.array(image), 100, 200)\ntab1, tab2 = st.tabs([\"Detected edges\", \"Original\"])\ntab1.image(edges, use_column_width=True)\ntab2.image(image, use_column_width=True)","import streamlit as st\nimport pandas as pd\nimport numpy as np\nimport pydeck as pdk\n\nst.write(\"Streamlit has lots of fans in the geo community. 🌍 It supports maps from PyDeck, Folium, Kepler.gl, and others.\")\n\nchart_data = pd.DataFrame(\n   np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],\n   columns=['lat', 'lon'])\n\nst.pydeck_chart(pdk.Deck(\n    map_style=None,\n    initial_view_state=pdk.ViewState(\n        latitude=37.76,\n        longitude=-122.4,\n        zoom=11,\n        pitch=50,\n    ),\n    layers=[\n        pdk.Layer(\n           'HexagonLayer',\n           data=chart_data,\n           get_position='[lon, lat]',\n           radius=200,\n           elevation_scale=4,\n           elevation_range=[0, 1000],\n           pickable=True,\n           extruded=True,\n        ),\n        pdk.Layer(\n            'ScatterplotLayer',\n            data=chart_data,\n            get_position='[lon, lat]',\n            get_color='[200, 30, 0, 160]',\n            get_radius=200,\n        ),\n    ],\n))"]},"__N_SSG":true},"page":"/playground","query":{},"buildId":"xXjBwJ6GSCaem77aPtTuC","isFallback":false,"gsp":true,"scriptLoader":[]}</script><iframe id="netlify-identity-widget" title="Netlify identity widget" style="position: fixed; top: 0; left: 0; border: none; width: 100%; height: 100%; overflow: visible; background: transparent; display: none; z-index: 99; " src="./Temperature COnverter_files/saved_resource(1).html"></iframe><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p></next-route-announcer><script src="./Temperature COnverter_files/11391-113dd290cf4b9c94.js.download"></script><script src="./Temperature COnverter_files/[...id]-92e9f8a3a7a4b3a4.js.download"></script><script src="./Temperature COnverter_files/48143-ab512374542990b4.js.download"></script><script src="./Temperature COnverter_files/gallery-60354867c933eba6.js.download"></script><script src="./Temperature COnverter_files/components-fceb6ac7c0f49196.js.download"></script><script src="./Temperature COnverter_files/index-9d0025a6694c86a4.js.download"></script><script src="./Temperature COnverter_files/brand-3d46f2cf18c03bd2.js.download"></script><script src="./Temperature COnverter_files/advisories-e844ebfbdff16484.js.download"></script><script src="./Temperature COnverter_files/terms-of-use-210342cb8da575db.js.download"></script><script src="./Temperature COnverter_files/privacy-policy-57269508dadd44d7.js.download"></script></body></html>
